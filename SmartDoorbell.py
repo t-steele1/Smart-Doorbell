@@ -79,10 +79,10 @@ while True:
 		os.system(command4)
 		
 		#Send email
-		smtpUser = 'smartdoorbellTS@gmail.com'
-		smtpPass = 'marathonSauce'
+		smtpUser = 'THROWAWAY_EMAIL@gmail.com'
+		smtpPass = 'PASSWORD'
 
-		toAdd = 'tomgsteele@gmail.com'
+		toAdd = 'YOUR_EMAIL@EMAIL_PROVIDER.com'
 		fromAdd = smtpUser
 		
 		f_time = datetime.now().strftime('%a %d %b @ %H:%M')
@@ -115,18 +115,5 @@ while True:
 		s.quit()
 		
 		print("Email delivered")
-		
-		#Send text
-		account_sid = "AC94fe7b34bb86cfe7e703906c1a5174a8"
-		auth_token = "34f66fded5af3cd5a4993eceac43c5b5"
-		client = Client(account_sid, auth_token)
-		
-		message = client.api.account.messages.create(
-				to = "+19086039376",
-				from_= "+15595299390",
-				body = "Detection alert @" + f_time)
-		
-		print("Text delivered")
-	
 	else:
 		print("No detections yet")
